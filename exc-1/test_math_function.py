@@ -144,3 +144,40 @@ class TestModuloFunc(unittest.TestCase):
         res = 2000000
         result = math_function.mul_function(num_a, num_b)
         self.assertEqual(res, result)
+
+    def test_div_function_positive_numbers(self):
+        num_a = 2
+        num_b = 1
+        res = 2
+        result = math_function.div_function(num_a, num_b)
+        self.assertEqual(res, result)
+
+    def test_div_function_negative_numbers(self):
+        num_a = -1
+        num_b = -2
+        res = 0.5
+        result = math_function.div_function(num_a, num_b)
+        self.assertEqual(res, result)
+
+    def test_div_function_positive_and_negative(self):
+        num_a = [1, -1]
+        num_b = [-2, 2]
+        res = [-0.5, -0.5]
+        for i in range(len(num_a)):
+            result = math_function.div_function(num_a[i], num_b[i])
+            self.assertEqual(res[i], result)
+
+    # def test_div_function_with_zero(self):
+    #     num_a = [0, 0, 1, -1, 0]
+    #     num_b = [0, 1, 0, 0, -1]
+    #     res = [0, 0, 0, 0, 0]
+    #     for i in range(len(num_a)):
+    #         result = math_function.div_function(num_a[i], num_b[i])
+    #         self.assertEqual(res[i], result)
+
+    def test_div_function_large_numbers(self):
+        num_a = 2000000
+        num_b = 1000000
+        res = 2
+        result = math_function.div_function(num_a, num_b)
+        self.assertEqual(res, result)
