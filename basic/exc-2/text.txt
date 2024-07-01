@@ -1,0 +1,125 @@
+Step 1: login
+    - open browser
+    - access login page
+    - insert login info (username,password)
+    - check if login was successful
+Step 2: search item
+    - access search tab
+    - inter search query(query)
+    - perform search
+    - verify results
+Step 3: add item to cart
+    - pick item from search list (item)
+    - add to cart
+    - verify item is in cart
+Step 4:search new item
+    - run STEP2 on (new item)
+Step 5: add new item to cart
+    - run STEP3 on (new item)
+Step 6: check sub total
+    - access cart menu
+    - verify sub_total matches given(subtotal)
+Step 7: check sub total price + shipping
+    - access checkout menu
+    - verify sub_total_with_shipping matches given(subtotal+shipping)
+Step 8: delete one item from cart
+    - access cart
+    - delete last item
+    - verify cart list
+Step 9: check sub total
+Step 10: check sub total price + shipping
+
+
+------------------------------------------------------------------------------------
+
+- Get user name
+- Get password
+- Insert user name to user input
+- Insert password to password input
+- Click login
+- Search item in search window
+- Click add item to cart
+- Check total price in the cart
+- Delete the item from the cart
+- Check the cart is empty
+- Add item in sale
+- Check the discount in the cart
+
+
+BEFORE ALL:
+    - Get user name
+    - Get password
+    - Insert user name to user input
+    - Insert password to password input
+    - Click login
+
+BEFORE EACH:
+
+
+1.login
+    arr:
+    act:
+    ast:
+        - verify user logged in
+
+
+2. search
+    arr:
+        - Get [search item]
+    act:
+        - Search item in search window
+    ast:
+        - verify item is on display
+
+
+3. add to cart
+    arr:
+        - Get [search item]
+        - Search item in search window
+    act:
+        - Click add item to cart
+        - access cart details
+    ast:
+        - verify item is in cart
+
+
+4. Check total price of cart
+    arr:
+        - Get [search item]
+        - Search item in search window
+        - Click add item to cart
+    act:
+        - access cart details
+    ast:
+        - verify price of cart
+
+5. Check if cart is empty after removing item
+    arr:
+        - Get [search item]
+        - Search item in search window
+        - Click add item to cart
+        - access cart details
+    act:
+        - click on delete item
+    ast:
+        - verify updated cart is empty
+
+6. Add item in sale
+    arr:
+        - Get [item_on_sale]
+    act:
+        - Click on item_on_sale
+        - Click add item to cart
+        - access cart details
+    ast:
+        -verify item in cart
+
+7. Check the discount in the cart
+    arr:
+        - Get [item_on_sale]
+        - Click on item_on_sale
+        - Click add item to cart
+    act:
+        - access cart details
+    ast:
+        - verify price of cart includes discount
