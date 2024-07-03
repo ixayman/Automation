@@ -1,30 +1,39 @@
 from selenium.webdriver.common.by import By
-from sel.POM.saucedemo.infra.base_page import BasePage
+from sel.POM.saucedemo.infra.base_page_app import BasePageApp
 
 
-class MainPage(BasePage):
+class MainPage(BasePageApp):
     # MAIN COMPONENTS:
-    HEADER_CONTAINER = '//div[@id="header_container"]'
     INVENTORY_CONTAINER = '//div[@id="inventory_container"]'
-    FOOTER = '//footer[@class="footer"]'
-
-    # SUB COMPONENTS - HEADER:
-    APP_LOGO = '//div[@class = "app_logo"]'
-    CART_LINK = '//a[@class="shopping_cart_link"]'
-    HAMBURGER_MENU = '//button[@id="react-burger-menu-btn"]'
-
     # SUB COMPONENTS - INVENTORY:
+    INVENTORY_ITEMS = '//div[@class="inventory_item"]'
 
     def __init__(self, driver):
         super().__init__(driver)
         # MAIN COMPONENTS:
-        self._header_container = self._driver.find_element(By.XPATH, self.HEADER_CONTAINER)
         self._inventory_container = self._driver.find_element(By.XPATH, self.INVENTORY_CONTAINER)
-        self._footer = self._driver.find_element(By.XPATH, self.FOOTER)
-
-        # SUB COMPONENTS - HEADER:
-        self._app_logo = self._header_container.find_element(By.XPATH, self.APP_LOGO)
-        self._cart_link = self._header_container.find_element(By.XPATH, self.CART_LINK)
-        self._hamburger_menu = self._header_container.find_element(By.XPATH, self.HAMBURGER_MENU)
 
         # SUB COMPONENTS - INVENTORY:
+        self._inventory_items = self._inventory_container.find_elements(By.XPATH, self.INVENTORY_ITEMS)
+
+    def get_inventory_item_name(self, number):
+        item = self._inventory_items[number]
+        return item.find_element(By.XPATH, '//div[@class="inventory_item_name "]')
+
+    def get_inventory_item_image(self, number):
+        item = self._inventory_items[number]
+        return item.find_element(By.TAG_NAME, 'img')
+
+    def get_inventory_item_description(self, number):
+        item = self._inventory_items[number]
+        return item.find_element(By.TAG_NAME, '//div[@class="inventory_item_desc"]')
+
+    def click_inventory_item_name(self, number):
+        self.get_inventory_item_name(number).click()
+
+    def click_inventory_item_image(self, number):
+        self.get_inventory_item_image(number).click()
+
+    def click_inventory_item_add_button(self, number):
+        item = self._inventory_items[number]
+        item.find_element(By.TAG_NAME, 'button').click()
