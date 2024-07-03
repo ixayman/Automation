@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from sel.POM.saucedemo.infra.base_page_app import BasePageApp
+from sel.POM.saucedemo.logic.base_page_app import BasePageApp
 
 
 class MainPage(BasePageApp):
