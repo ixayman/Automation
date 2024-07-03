@@ -5,11 +5,11 @@ from selenium import webdriver
 
 
 class TestLoginPage:
-    driver = BrowserWrapper()
-    driver.get_driver('https://www.saucedemo.com/')
+    browser_wrapper = BrowserWrapper()
+    driver = browser_wrapper.get_driver('https://www.saucedemo.com/')
     login_page = LoginPage(driver)
 
-    def test_loin_logo(self):
+    def test_login_logo(self):
         phrase = "Swag Labs"
         if phrase == self.login_page.get_login_logo():
             print("TEST PASSED")
@@ -18,4 +18,4 @@ class TestLoginPage:
 
 
 temp = TestLoginPage()
-temp.test_loin_logo()
+temp.test_login_logo()
