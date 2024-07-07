@@ -1,0 +1,17 @@
+{
+    "browser": "Firefox",
+    "FIRST_NAME": "ayman",
+    "LAST_NAME": "khalil",
+    "ADDRESS":"saker",
+    "CITY": "isfiya",
+    "STATE": "haifa",
+    "ZIP_CODE": "3009000",
+    "PHONE_NUMBER": "123456789",
+    "SSN" : "987654321",
+    "USERNAME" : "aymantest",
+    "PASSWORD" : "passtest",
+    "ACCOUNT_CREATED" : "Your account was created successfully",
+    "NON_MATCHING_PASSWORDS_ERROR": "Passwords did not match.",
+    "UNAVAILABLE_USERNAME": "This username already exists.",
+    "register_page" : "https://parabank.parasoft.com/parabank/register.htm"
+}
