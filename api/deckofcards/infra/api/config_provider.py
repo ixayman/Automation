@@ -6,7 +6,7 @@ class ConfigProvider:
     @staticmethod
     def load_from_file():
         try:
-            with open('../config.json', 'r') as f:
+            with open('../../config.json', 'r') as f:
                 config = json.load(f)
                 print(f"Config loaded!")
                 return config
